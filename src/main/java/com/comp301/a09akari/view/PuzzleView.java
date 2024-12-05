@@ -34,6 +34,11 @@ public class PuzzleView implements FXComponent {
         switch (cellType) {
           case CORRIDOR:
             if (controller.isLamp(r, c)) {
+              if (controller.isLampIllegal(r, c)) {
+                cellButton.setStyle("-fx-background-color: red; -fx-text-fill: black;");
+              } else {
+                cellButton.setStyle("-fx-background-color: yellow; -fx-text-fill: black;");
+              }
               cellButton.setText("💡");
             } else if (controller.isLit(r, c)) {
               cellButton.setStyle("-fx-background-color: yellow;");
@@ -47,11 +52,15 @@ public class PuzzleView implements FXComponent {
 
           case CLUE:
             cellButton.setText(String.valueOf(controller.getActivePuzzle().getClue(r, c)));
-            cellButton.setStyle("-fx-background-color: lightgray;");
+            if (controller.isClueSatisfied(r, c)) {
+              cellButton.setStyle("-fx-background-color: green; -fx-text-fill: black;");
+            } else {
+              cellButton.setStyle("-fx-background-color: lightgray; -fx-text-fill: black;");
+            }
             break;
 
           case WALL:
-            cellButton.setStyle("-fx-background-color: gray;");
+            cellButton.setStyle("-fx-background-color: black;");
             break;
         }
 

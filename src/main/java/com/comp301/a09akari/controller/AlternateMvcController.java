@@ -32,4 +32,10 @@ public interface AlternateMvcController {
 
   /** Getter method for the active puzzle */
   Puzzle getActivePuzzle();
+
+  boolean isLampIllegal(int r, int c);
+
+  int getActivePuzzleIndex();
+
+  int getPuzzleLibrarySize();
 }

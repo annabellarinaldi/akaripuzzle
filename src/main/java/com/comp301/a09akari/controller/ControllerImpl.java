@@ -69,6 +69,15 @@ public class ControllerImpl implements AlternateMvcController, ClassicMvcControl
     return model.isLamp(r, c);
   }
 
+  public boolean isLampIllegal(int r, int c) {
+    return model.isLampIllegal(r, c);
+  }
+
+  @Override
+  public int getActivePuzzleIndex() {
+    return model.getActivePuzzleIndex();
+  }
+
   @Override
   public boolean isClueSatisfied(int r, int c) {
     return model.isClueSatisfied(r, c);
@@ -82,5 +91,9 @@ public class ControllerImpl implements AlternateMvcController, ClassicMvcControl
   @Override
   public Puzzle getActivePuzzle() {
     return model.getActivePuzzle();
+  }
+
+  public int getPuzzleLibrarySize() {
+    return model.getPuzzleLibrarySize();
   }
 }
