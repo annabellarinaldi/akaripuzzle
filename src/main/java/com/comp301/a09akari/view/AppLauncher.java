@@ -37,7 +37,7 @@ public class AppLauncher extends Application {
     updateIndexLabel(indexLabel, controller);
 
     VBox topBox = new VBox();
-    topBox.setSpacing(5); // Add spacing between components
+    topBox.setSpacing(5);
     topBox.setAlignment(Pos.CENTER);
     topBox.getChildren().addAll(messageView.render(), indexLabel);
 
