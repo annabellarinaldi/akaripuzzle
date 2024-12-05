@@ -56,7 +56,7 @@ public class AppLauncher extends Application {
 
     Scene scene = new Scene(root, 600, 800);
     stage.setScene(scene);
-    stage.setTitle("Akari Puzzle Game");
+    stage.setTitle("Akari");
     stage.show();
   }
 
