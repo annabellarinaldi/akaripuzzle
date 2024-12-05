@@ -35,11 +35,11 @@ public class AppLauncher extends Application {
     root.setTop(messageView.render());
 
     model.addObserver(
-            updatedModel -> {
-              root.setCenter(puzzleView.render());
-              root.setBottom(controlView.render());
-              root.setTop(messageView.render());
-            });
+        updatedModel -> {
+          root.setCenter(puzzleView.render());
+          root.setBottom(controlView.render());
+          root.setTop(messageView.render());
+        });
 
     Scene scene = new Scene(root, 600, 800);
     stage.setScene(scene);
